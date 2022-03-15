@@ -47,14 +47,14 @@ export default function App() {
       )}
 
       {data &&
-        data.map(({ id, lastName, email, company, skill, grades }) => (
+        data.map(({ id, lastName, firstName, email, company, skill, grades, pic }) => (
           <div key={id}>
-            <h3> {lastName}</h3>
+            <img src={pic} alt='picture'></img>
+            <h3> {firstName} {lastName}</h3>
             <p>Email: {email}</p>
             <p>Company: {company}</p>
             <p>Skill: {skill}</p>
             <Posts average={grades} />
-            {/* <p>average({grades})</p> */}
           </div>
         ))}
 
