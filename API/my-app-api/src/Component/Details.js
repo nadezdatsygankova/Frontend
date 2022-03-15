@@ -7,7 +7,9 @@ export default function Details(props) {
     let data = props;
     return (
         <div className="App">
-
+            <div>
+                <input value='Search by name'></input>
+            </div>
             {data &&
                 data.map(({ id, lastName, firstName, email, company, skill, grades, pic }) => (
                     <div key={id} className='box'>
