@@ -49,3 +49,12 @@ p {
 .information {
   margin-left: 15px;
 }
+
+.searchInput {
+  max-width: 80%;
+  margin: auto;
+  border: none;
+  height: 30px;
+  margin-left: 110px;
+  font-family: 'Inter', sans-serif;
+}

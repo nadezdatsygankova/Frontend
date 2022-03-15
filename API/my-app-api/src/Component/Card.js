@@ -1,48 +1,29 @@
 
 
+import Average from './Average';
 
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Search from "./Search";
-import Details from "./Details";
-
-export default function Card() {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const response = await axios.get(
-                    ` https://api.hatchways.io/assessment/students`
-                );
-
-                // console.log(response.data);
-                let responseDataArray = response.data.students;
-                console.log(responseDataArray);
-                setData(responseDataArray);
-                setError(null);
-            } catch (err) {
-                setError(err.message);
-                setData(null);
-            } finally {
-                setLoading(false);
-            }
-        };
-        getData();
-    }, []);
-
+export default function Card({ person }) {
 
     return (
         <div className="App">
-            {/* <h1></h1> */}
-            {loading && <div>A moment please...</div>}
-            {error && (
-                <div>{`There is a problem fetching the post data - ${error}`}</div>
-            )}
-            <Search data={data} />
-            <Details information={data} />
+            <div className='box'>
+                <div className='imageBox'>
+                    <img className='image' src={person.pic} alt='picture'></img>
+                </div>
+                <div className='boxInformation'>
+                    <div>
+                        <h3> {person.firstName} {person.lastName}</h3>
+                    </div>
+                    <div className='information'>
+                        <p>Email: {person.email}</p>
+                        <p>Company: {person.company}</p>
+                        <p>Skill: {person.skill}</p>
+                        <Average average={person.grades} />
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
     );
