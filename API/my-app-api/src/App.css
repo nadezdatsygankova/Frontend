@@ -1,0 +1,51 @@
+.App {
+  max-width: 80%;
+  margin: auto;
+  border: solid;
+  border-color: rgb(179, 191, 201);
+}
+
+.box {
+  height: 150px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 20px;
+  border-bottom: solid;
+  border-color: rgb(179, 191, 201);
+}
+
+.imageBox {
+  border: solid;
+  border-radius: 50%;
+  border-color: rgb(179, 191, 201);
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.image {
+  height: 75%;
+  width: 75%;
+}
+
+.boxInformation {
+  display: flex;
+  flex-direction: column;
+}
+h3 {
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  margin: 3px;
+}
+
+.information {
+  margin-left: 15px;
+}

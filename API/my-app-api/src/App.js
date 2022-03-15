@@ -32,29 +32,36 @@ export default function App() {
     getData();
   }, []);
 
-
-
-
-
-
-
   return (
     <div className="App">
-      <h1>API Posts</h1>
+      {/* <h1></h1> */}
       {loading && <div>A moment please...</div>}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
+      <div>
+        <input value='Search by name'></input>
+      </div>
 
       {data &&
         data.map(({ id, lastName, firstName, email, company, skill, grades, pic }) => (
-          <div key={id}>
-            <img src={pic} alt='picture'></img>
-            <h3> {firstName} {lastName}</h3>
-            <p>Email: {email}</p>
-            <p>Company: {company}</p>
-            <p>Skill: {skill}</p>
-            <Posts average={grades} />
+          <div key={id} className='box'>
+            <div className='imageBox'>
+              <img className='image' src={pic} alt='picture'></img>
+            </div>
+            <div className='boxInformation'>
+              <div>
+                <h3> {firstName} {lastName}</h3>
+              </div>
+              <div className='information'>
+                <p>Email: {email}</p>
+                <p>Company: {company}</p>
+                <p>Skill: {skill}</p>
+                <Posts average={grades} />
+              </div>
+
+            </div>
+
           </div>
         ))}
 
