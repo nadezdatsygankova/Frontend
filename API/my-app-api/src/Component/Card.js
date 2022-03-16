@@ -1,8 +1,9 @@
 
-
 import Average from './Average';
+import Collapsible from './Collapsible';
 
 export default function Card({ person }) {
+
 
     return (
         <div className="App">
@@ -19,6 +20,9 @@ export default function Card({ person }) {
                         <p>Company: {person.company}</p>
                         <p>Skill: {person.skill}</p>
                         <Average average={person.grades} />
+                    </div>
+                    <div>
+                        {/* <Collapsible />; */}
                     </div>
 
                 </div>
