@@ -58,3 +58,18 @@ p {
   margin-left: 10%;
   font-family: 'Inter', sans-serif;
 }
+
+.grades:active {
+  width: 200px;
+  height: 300px;
+  margin-left: 150px;
+}
+
+li {
+  margin-left: 150px;
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+}

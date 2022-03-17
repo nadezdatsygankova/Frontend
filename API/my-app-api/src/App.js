@@ -4,6 +4,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import Search from './Component/Search'
 
+
 function App() {
 
 
@@ -11,6 +12,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [inputText, setInputText] = useState("");
+
+
+
+
 
   useEffect(() => {
     const getData = async () => {
@@ -42,7 +47,7 @@ function App() {
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
-
+      <h1> hi there</h1>
       <Search details={data} />
     </div>
   );

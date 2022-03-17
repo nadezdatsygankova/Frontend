@@ -1,9 +1,12 @@
 
 
 import Average from './Average';
+import { React, useState } from "react";
+
 
 export default function Card({ person }) {
-
+    const [isActive, setIsActive] = useState(false);
+    console.log(person.grades);
     return (
         <div className="App">
             <div className='box'>
@@ -21,8 +24,23 @@ export default function Card({ person }) {
                         <Average average={person.grades} />
                     </div>
 
+
+                </div>
+                <div className='plus' onClick={() => setIsActive(!isActive)}>
+                    <div >
+                        {isActive ? ' - ' : '+'}
+                    </div>
                 </div>
 
+            </div>
+            <div className='grades'>
+                <ul >
+                    {isActive && person.grades.map((num, index) => (
+
+                        <li key={index}>{`Test ${index + 1} : ${num}`}</li>
+
+                    ))}
+                </ul>
             </div>
 
         </div>
